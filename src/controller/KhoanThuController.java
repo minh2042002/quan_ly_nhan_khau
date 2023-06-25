@@ -99,7 +99,7 @@ public class KhoanThuController implements Initializable {
 			// neu khong nhap gi -> thong bao loi
 			if (keySearch.length() == 0) {
 				tvKhoanPhi.setItems(listValueTableView);
-				Alert alert = new Alert(AlertType.WARNING, "Hãy nhập vào thông tin cần tìm kiếm!", ButtonType.OK);
+				Alert alert = new Alert(AlertType.WARNING, "Hãy nhập vào tên khoản thu!", ButtonType.OK);
 				alert.setHeaderText(null);
 				alert.showAndWait();
 				break;
@@ -120,7 +120,7 @@ public class KhoanThuController implements Initializable {
 			// tim thay
 			if (index == 0) {
 				tvKhoanPhi.setItems(listValueTableView); // hien thi toan bo thong tin
-				Alert alert = new Alert(AlertType.INFORMATION, "Không tìm thấy thông tin!", ButtonType.OK);
+				Alert alert = new Alert(AlertType.INFORMATION, "Không tìm thấy!", ButtonType.OK);
 				alert.setHeaderText(null);
 				alert.showAndWait();
 			}
@@ -130,7 +130,7 @@ public class KhoanThuController implements Initializable {
 			// neu khong nhap gi -> thong bao loi
 			if (keySearch.length() == 0) {
 				tvKhoanPhi.setItems(listValueTableView);
-				Alert alert = new Alert(AlertType.INFORMATION, "Bạn cần nhập vào thông tin tìm kiếm!", ButtonType.OK);
+				Alert alert = new Alert(AlertType.INFORMATION, "Bạn cần nhập vào thông tin cần tìm!", ButtonType.OK);
 				alert.setHeaderText(null);
 				alert.showAndWait();
 				break;
@@ -139,7 +139,7 @@ public class KhoanThuController implements Initializable {
 			// kiem tra thong tin tim kiem co hop le hay khong
 			Pattern pattern = Pattern.compile("\\d{1,}");
 			if (!pattern.matcher(keySearch).matches()) {
-				Alert alert = new Alert(AlertType.WARNING, "Bạn phải nhập vào 1 số!", ButtonType.OK);
+				Alert alert = new Alert(AlertType.WARNING, "Bạn phải nhập vào một số!", ButtonType.OK);
 				alert.setHeaderText(null);
 				alert.showAndWait();
 				return;
@@ -155,7 +155,7 @@ public class KhoanThuController implements Initializable {
 
 			// khong tim thay thong tin -> thong bao toi nguoi dung
 			tvKhoanPhi.setItems(listValueTableView);
-			Alert alert = new Alert(AlertType.WARNING, "Không tìm thấy thông tin!", ButtonType.OK);
+			Alert alert = new Alert(AlertType.WARNING, "Không tìm thấy!", ButtonType.OK);
 			alert.setHeaderText(null);
 			alert.showAndWait();
 		}
@@ -208,7 +208,7 @@ public class KhoanThuController implements Initializable {
 		// bat loi truong hop khong hop le
 		if (updateKhoanThu == null) return;
 		if (khoanThuModel == null) {
-			Alert alert = new Alert(AlertType.WARNING, "Chọn khoản thu update !", ButtonType.OK);
+			Alert alert = new Alert(AlertType.WARNING, "Chọn khoản thu muốn sửa!", ButtonType.OK);
 			alert.setHeaderText(null);
 			alert.showAndWait();
 			return;

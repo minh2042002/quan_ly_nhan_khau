@@ -112,7 +112,7 @@ public class NopTienController implements Initializable {
 			// neu khong nhap gi -> thong bao loi
 			if (keySearch.length() == 0) {
 				tvNopTien.setItems(listValueTableView);
-				Alert alert = new Alert(AlertType.WARNING, "Hãy nhập vào thông tin cần tìm kiếm!", ButtonType.OK);
+				Alert alert = new Alert(AlertType.WARNING, "Hãy nhập vào tên người nộp!", ButtonType.OK);
 				alert.setHeaderText(null);
 				alert.showAndWait();
 				break;
@@ -133,7 +133,7 @@ public class NopTienController implements Initializable {
 			// tim thay
 			if (index == 0) {
 				tvNopTien.setItems(listValueTableView); // hien thi toan bo thong tin
-				Alert alert = new Alert(AlertType.INFORMATION, "Không tìm thấy thông tin!", ButtonType.OK);
+				Alert alert = new Alert(AlertType.INFORMATION, "Không tìm thấy!", ButtonType.OK);
 				alert.setHeaderText(null);
 				alert.showAndWait();
 			}
@@ -143,7 +143,7 @@ public class NopTienController implements Initializable {
 			// neu khong nhap gi -> thong bao loi
 			if (keySearch.length() == 0) {
 				tvNopTien.setItems(listValueTableView);
-				Alert alert = new Alert(AlertType.WARNING, "Hãy nhập vào thông tin cần tìm kiếm!", ButtonType.OK);
+				Alert alert = new Alert(AlertType.WARNING, "Hãy nhập vào tên khoản thu!", ButtonType.OK);
 				alert.setHeaderText(null);
 				alert.showAndWait();
 				break;
@@ -164,7 +164,7 @@ public class NopTienController implements Initializable {
 			// tim thay
 			if (index == 0) {
 				tvNopTien.setItems(listValueTableView); // hien thi toan bo thong tin
-				Alert alert = new Alert(AlertType.INFORMATION, "Không tìm thấy thông tin!", ButtonType.OK);
+				Alert alert = new Alert(AlertType.INFORMATION, "Không tìm thấy!", ButtonType.OK);
 				alert.setHeaderText(null);
 				alert.showAndWait();
 			}
@@ -185,12 +185,12 @@ public class NopTienController implements Initializable {
 		NopTienModel nopTienModel = tvNopTien.getSelectionModel().getSelectedItem();
 
 		if (nopTienModel == null) {
-			Alert alert = new Alert(AlertType.WARNING, "Hãy chọn khoản nộp bạn muốn xóa!", ButtonType.OK);
+			Alert alert = new Alert(AlertType.WARNING, "Hãy chọn khoản nộp bạn cần xóa!", ButtonType.OK);
 			alert.setHeaderText(null);
 			alert.showAndWait();
 		}
 		
-		Alert alert = new Alert(AlertType.WARNING, "Bạn có chắc chắn muốn xóa nhân khẩu này!", ButtonType.YES,
+		Alert alert = new Alert(AlertType.WARNING, "Bạn chắc chắn muốn xóa khoản này?", ButtonType.YES,
 				ButtonType.NO);
 		alert.setHeaderText(null);
 		Optional<ButtonType> result = alert.showAndWait();

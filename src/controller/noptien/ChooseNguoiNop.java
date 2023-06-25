@@ -93,7 +93,7 @@ public class ChooseNguoiNop implements Initializable {
 		tvNhanKhau.setItems(listValueTableView);
 
 		// thiet lap gia tri cho combobox
-		ObservableList<String> listComboBox = FXCollections.observableArrayList("Tên", "Tuổi", "id");
+		ObservableList<String> listComboBox = FXCollections.observableArrayList("Tên", "Tuổi", "Id");
 		cbChooseSearch.setValue("Tên");
 		cbChooseSearch.setItems(listComboBox);
 	}
@@ -112,7 +112,7 @@ public class ChooseNguoiNop implements Initializable {
 			// neu khong nhap gi -> thong bao loi
 			if (keySearch.length() == 0) {
 				tvNhanKhau.setItems(listValueTableView);
-				Alert alert = new Alert(AlertType.WARNING, "Hãy nhập vào thông tin cần tìm kiếm!", ButtonType.OK);
+				Alert alert = new Alert(AlertType.WARNING, "Hãy nhập vào tên!", ButtonType.OK);
 				alert.setHeaderText(null);
 				alert.showAndWait();
 				break;
@@ -133,7 +133,7 @@ public class ChooseNguoiNop implements Initializable {
 			// tim thay
 			if (index == 0) {
 				tvNhanKhau.setItems(listValueTableView); // hien thi toan bo thong tin
-				Alert alert = new Alert(AlertType.INFORMATION, "Không tìm thấy thông tin!", ButtonType.OK);
+				Alert alert = new Alert(AlertType.INFORMATION, "Không tìm thấy!", ButtonType.OK);
 				alert.setHeaderText(null);
 				alert.showAndWait();
 			}
@@ -143,7 +143,7 @@ public class ChooseNguoiNop implements Initializable {
 			// neu khong nhap gi -> thong bao loi
 			if (keySearch.length() == 0) {
 				tvNhanKhau.setItems(listValueTableView);
-				Alert alert = new Alert(AlertType.WARNING, "Hãy nhập vào thông tin cần tìm kiếm!", ButtonType.OK);
+				Alert alert = new Alert(AlertType.WARNING, "Hãy nhập vào tuổi!", ButtonType.OK);
 				alert.setHeaderText(null);
 				alert.showAndWait();
 				break;
@@ -152,7 +152,7 @@ public class ChooseNguoiNop implements Initializable {
 			// kiem tra chuoi nhap vao co phai la chuoi hop le hay khong
 			Pattern pattern = Pattern.compile("\\d{1,}");
 			if (!pattern.matcher(keySearch).matches()) {
-				Alert alert = new Alert(AlertType.WARNING, "Tuổi nhập vào phải là 1 số!", ButtonType.OK);
+				Alert alert = new Alert(AlertType.WARNING, "Tuổi nhập vào phải là một số!", ButtonType.OK);
 				alert.setHeaderText(null);
 				alert.showAndWait();
 				break;
@@ -172,7 +172,7 @@ public class ChooseNguoiNop implements Initializable {
 			// neu khong tim thay thong tin tim kiem -> thong bao toi nguoi dung
 			if (index == 0) {
 				tvNhanKhau.setItems(listValueTableView); // hien thi toan bo thong tin
-				Alert alert = new Alert(AlertType.INFORMATION, "Không tìm thấy thông tin!", ButtonType.OK);
+				Alert alert = new Alert(AlertType.INFORMATION, "Không tìm thấy!", ButtonType.OK);
 				alert.setHeaderText(null);
 				alert.showAndWait();
 			}
@@ -182,7 +182,7 @@ public class ChooseNguoiNop implements Initializable {
 			// neu khong nhap gi -> thong bao loi
 			if (keySearch.length() == 0) {
 				tvNhanKhau.setItems(listValueTableView);
-				Alert alert = new Alert(AlertType.INFORMATION, "Bạn cần nhập vào thông tin tìm kiếm!", ButtonType.OK);
+				Alert alert = new Alert(AlertType.INFORMATION, "Hãy nhập vào mã nhân khẩu!", ButtonType.OK);
 				alert.setHeaderText(null);
 				alert.showAndWait();
 				break;
@@ -191,7 +191,7 @@ public class ChooseNguoiNop implements Initializable {
 			// kiem tra thong tin tim kiem co hop le hay khong
 			Pattern pattern = Pattern.compile("\\d{1,}");
 			if (!pattern.matcher(keySearch).matches()) {
-				Alert alert = new Alert(AlertType.WARNING, "Bạn phải nhập vào 1 số!", ButtonType.OK);
+				Alert alert = new Alert(AlertType.WARNING, "Bạn phải nhập vào một số!", ButtonType.OK);
 				alert.setHeaderText(null);
 				alert.showAndWait();
 			}
@@ -206,7 +206,7 @@ public class ChooseNguoiNop implements Initializable {
 
 			// khong tim thay thong tin -> thong bao toi nguoi dung
 			tvNhanKhau.setItems(listValueTableView);
-			Alert alert = new Alert(AlertType.WARNING, "Không tìm thấy thông tin!", ButtonType.OK);
+			Alert alert = new Alert(AlertType.WARNING, "Không tìm thấy!", ButtonType.OK);
 			alert.setHeaderText(null);
 			alert.showAndWait();
 		}

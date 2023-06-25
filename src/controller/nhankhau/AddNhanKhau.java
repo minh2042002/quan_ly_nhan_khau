@@ -53,7 +53,7 @@ public class AddNhanKhau {
 		List<NhanKhauModel> listNhanKhauModels = new NhanKhauService().getListNhanKhau();
 		for (NhanKhauModel nhankhau : listNhanKhauModels) {
 			if (nhankhau.getId() == Integer.parseInt(tfId.getText())) {
-				Alert alert = new Alert(AlertType.WARNING, "ID bị trùng với một người khác!", ButtonType.OK);
+				Alert alert = new Alert(AlertType.WARNING, "Mã nhân khẩu bị trùng!", ButtonType.OK);
 				alert.setHeaderText(null);
 				alert.showAndWait();
 				return;
@@ -63,7 +63,7 @@ public class AddNhanKhau {
 		// kiem tra ten nhap vao
 		// ten nhap vao la chuoi tu 1 toi 50 ki tu
 		if (tfTen.getText().length() >= 50 || tfTen.getText().length() <= 1) {
-			Alert alert = new Alert(AlertType.WARNING, "Hãy nhập vào 1 tên hợp lệ!", ButtonType.OK);
+			Alert alert = new Alert(AlertType.WARNING, "Hãy nhập vào tên hợp lệ!", ButtonType.OK);
 			alert.setHeaderText(null);
 			alert.showAndWait();
 			return;
@@ -93,7 +93,7 @@ public class AddNhanKhau {
 		// SDT nhap vao phai khong chua chu cai va nho hon 15 chu so
 		pattern = Pattern.compile("\\d{1,15}");
 		if (!pattern.matcher(tfSdt.getText()).matches()) {
-			Alert alert = new Alert(AlertType.WARNING, "Hãy nhập vào SĐT hợp lệ!", ButtonType.OK);
+			Alert alert = new Alert(AlertType.WARNING, "Hãy nhập vào số điện thoại hợp lệ", ButtonType.OK);
 			alert.setHeaderText(null);
 			alert.showAndWait();
 			return;
@@ -103,7 +103,7 @@ public class AddNhanKhau {
 		// ma ho nhap vao phai khong chua chu cai va nho hon 11 chu so
 		pattern = Pattern.compile("\\d{1,11}");
 		if (!pattern.matcher(tfMaHoKhau.getText()).matches()) {
-			Alert alert = new Alert(AlertType.WARNING, "Hãy nhập vào mã hộ hợp lệ!", ButtonType.OK);
+			Alert alert = new Alert(AlertType.WARNING, "Hãy nhập vào mã hộ khẩu hợp lệ!", ButtonType.OK);
 			alert.setHeaderText(null);
 			alert.showAndWait();
 			return;
@@ -114,7 +114,7 @@ public class AddNhanKhau {
 		long check = listHoKhauModels.stream()
 				.filter(hokhau -> hokhau.getMaHo() == Integer.parseInt(tfMaHoKhau.getText())).count();
 		if (check <= 0) {
-			Alert alert = new Alert(AlertType.WARNING, "Không có hộ khẩu này!", ButtonType.OK);
+			Alert alert = new Alert(AlertType.WARNING, "Hộ khẩu không tồn tại!", ButtonType.OK);
 			alert.setHeaderText(null);
 			alert.showAndWait();
 			return;
@@ -122,7 +122,7 @@ public class AddNhanKhau {
 
 		// Kiem tra Quan he nhap vao
 		if (tfQuanHe.getText().length() >= 30 || tfQuanHe.getText().length() <= 1) {
-			Alert alert = new Alert(AlertType.WARNING, "Hãy nhập vào 1 quan hệ hợp lệ!", ButtonType.OK);
+			Alert alert = new Alert(AlertType.WARNING, "Hãy nhập vào một quan hệ hợp lệ!", ButtonType.OK);
 			alert.setHeaderText(null);
 			alert.showAndWait();
 			return;

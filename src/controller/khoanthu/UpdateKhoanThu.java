@@ -45,7 +45,7 @@ public class UpdateKhoanThu {
 		// kiem tra ten nhap vao
 		// ten nhap vao la chuoi tu 1 toi 50 ki tu
 		if (tfTenKhoanThu.getText().length() >= 50 || tfTenKhoanThu.getText().length() <= 1) {
-			Alert alert = new Alert(AlertType.WARNING, "Hãy nhập vào 1 tên khoản thu hợp lệ!", ButtonType.OK);
+			Alert alert = new Alert(AlertType.WARNING, "Hãy nhập vào tên khoản thu hợp lệ!", ButtonType.OK);
 			alert.setHeaderText(null);
 			alert.showAndWait();
 			return;

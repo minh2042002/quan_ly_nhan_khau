@@ -56,7 +56,7 @@ public class AddHoKhau {
 		List<HoKhauModel> listHoKhauModels = new HoKhauService().getListHoKhau();
 		for(HoKhauModel hokhau : listHoKhauModels) {
 			if (hokhau.getMaHo() == Integer.parseInt(tfMaHoKhau.getText())) {
-				Alert alert = new Alert(AlertType.WARNING, "Mã hộ bị trùng với một hộ khác!", ButtonType.OK);
+				Alert alert = new Alert(AlertType.WARNING, "Mã hộ khẩu bị trùng!", ButtonType.OK);
 				alert.setHeaderText(null);
 				alert.showAndWait();
 				return;
@@ -66,7 +66,7 @@ public class AddHoKhau {
 		// kiem tra dia chi nhap vao
 		// dia chi nhap vao la 1 chuoi t 1 toi 30 ki tu
 		if (tfDiaChi.getText().length() >= 50 || tfDiaChi.getText().length() <= 1) {
-			Alert alert = new Alert(AlertType.WARNING, "Hãy nhập vào 1 địa chỉ hợp lệ!", ButtonType.OK);
+			Alert alert = new Alert(AlertType.WARNING, "Hãy nhập vào địa chỉ hợp lệ!", ButtonType.OK);
 			alert.setHeaderText(null);
 			alert.showAndWait();
 			return;
@@ -85,7 +85,7 @@ public class AddHoKhau {
 		List<NhanKhauModel> listNhanKhauModels = new NhanKhauService().getListNhanKhau();
 		listNhanKhauModels.stream().forEach(nhankhau -> {
 			if (nhankhau.getId() == Integer.parseInt(tfMaChuHo.getText())) {
-				Alert alert = new Alert(AlertType.WARNING, "ID bị trùng với một người khác!", ButtonType.OK);
+				Alert alert = new Alert(AlertType.WARNING, "Mã nhân khẩu bị trùng!", ButtonType.OK);
 				alert.setHeaderText(null);
 				alert.showAndWait();
 				return;
@@ -95,7 +95,7 @@ public class AddHoKhau {
 		// kiem tra ten nhap vao
 		// ten nhap vao la chuoi tu 1 toi 50 ki tu
 		if (tfTenChuHo.getText().length() >= 50 || tfTenChuHo.getText().length() <= 1) {
-			Alert alert = new Alert(AlertType.WARNING, "Hãy nhập vào 1 tên hợp lệ!", ButtonType.OK);
+			Alert alert = new Alert(AlertType.WARNING, "Hãy nhập vào tên hợp lệ!", ButtonType.OK);
 			alert.setHeaderText(null);
 			alert.showAndWait();
 			return;
@@ -105,7 +105,7 @@ public class AddHoKhau {
 		// tuoi nhap vao nhieu nhat la 1 so co 3 chu so
 		pattern = Pattern.compile("\\d{1,3}");
 		if (!pattern.matcher(tfTuoi.getText()).matches()) {
-			Alert alert = new Alert(AlertType.WARNING, "Hãy nhập vào tuổi hợp lệ!", ButtonType.OK);
+			Alert alert = new Alert(AlertType.WARNING, "Hãy nhập vào một số!", ButtonType.OK);
 			alert.setHeaderText(null);
 			alert.showAndWait();
 			return;
@@ -125,7 +125,7 @@ public class AddHoKhau {
 		// SDT nhap vao phai khong chua chu cai va nho hon 15 chu so
 		pattern = Pattern.compile("\\d{1,15}");
 		if (!pattern.matcher(tfSoDienThoai.getText()).matches()) {
-			Alert alert = new Alert(AlertType.WARNING, "Hãy nhập vào SĐT hợp lệ!", ButtonType.OK);
+			Alert alert = new Alert(AlertType.WARNING, "Hãy nhập vào số điện thoại hợp lệ!", ButtonType.OK);
 			alert.setHeaderText(null);
 			alert.showAndWait();
 			return;

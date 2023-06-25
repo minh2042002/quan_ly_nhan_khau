@@ -62,7 +62,7 @@ public class UpdateHoKhau {
 		// kiem tra dia chi nhap vao
 		// dia chi nhap vao la 1 chuoi t 1 toi 30 ki tu
 		if (tfDiaChi.getText().length() >= 50 || tfDiaChi.getText().length() <= 1) {
-			Alert alert = new Alert(AlertType.WARNING, "Hãy nhập vào 1 địa chỉ hợp lệ!", ButtonType.OK);
+			Alert alert = new Alert(AlertType.WARNING, "Hãy nhập vào địa chỉ hợp lệ!", ButtonType.OK);
 			alert.setHeaderText(null);
 			alert.showAndWait();
 			return;

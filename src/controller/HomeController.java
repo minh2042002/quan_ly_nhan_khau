@@ -53,7 +53,8 @@ public class HomeController implements Initializable {
 	}
 	
 	public void setTrangChu(ActionEvent event) throws IOException {
-		FXMLLoader loader = new FXMLLoader(LoginController.class.getResource("/views/Main.fxml"));
+//		FXMLLoader loader = new FXMLLoader(LoginController.class.getResource("/views/Main.fxml"));
+		FXMLLoader loader = new FXMLLoader(getClass().getResource("/views/Main.fxml"));
 		Pane trangchuPane = (Pane) loader.load();
 		borderPane.setCenter(trangchuPane);
 

@@ -22,12 +22,12 @@ public class LoginController {
 	private PasswordField tfPassword;
 	
 	public void Login(ActionEvent event) throws IOException {
-		String name = tfUsername.getText();
+		String username = tfUsername.getText();
 		String pass = tfPassword.getText();
 		
 		// check username and password
-		if(!name.equals("admin") || !pass.equals("admin")) {
-			Alert alert = new Alert(AlertType.WARNING, "Bạn nhập sai mật khẩu rồi hihi!", ButtonType.OK);
+		if(!username.equals("admin") || !pass.equals("admin")) {
+			Alert alert = new Alert(AlertType.WARNING, "Tài khoản hoặc mật khẩu không đúng!", ButtonType.OK);
 			alert.setHeaderText(null);
 			alert.showAndWait();
 			return;

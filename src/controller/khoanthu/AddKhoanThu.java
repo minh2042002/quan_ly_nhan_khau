@@ -51,7 +51,7 @@ public class AddKhoanThu implements Initializable {
 		List<KhoanThuModel> listKhoanThuModels = new KhoanThuService().getListKhoanThu(); 
 		for(KhoanThuModel khoanThuModel : listKhoanThuModels) {
 			if(khoanThuModel.getMaKhoanThu() == Integer.parseInt(tfMaKhoanThu.getText())) {
-				Alert alert = new Alert(AlertType.WARNING, "Mã khoản thu đã bị trùng!", ButtonType.OK);
+				Alert alert = new Alert(AlertType.WARNING, "Mã khoản thu bị trùng!", ButtonType.OK);
 				alert.setHeaderText(null);
 				alert.showAndWait();
 				return;
@@ -61,7 +61,7 @@ public class AddKhoanThu implements Initializable {
 		// kiem tra ten nhap vao
 		// ten nhap vao la chuoi tu 1 toi 50 ki tu
 		if (tfTenKhoanThu.getText().length() >= 50 || tfTenKhoanThu.getText().length() <= 1) {
-			Alert alert = new Alert(AlertType.WARNING, "Hãy nhập vào 1 tên khoản thu hợp lệ!", ButtonType.OK);
+			Alert alert = new Alert(AlertType.WARNING, "Hãy nhập vào tên khoản thu hợp lệ!", ButtonType.OK);
 			alert.setHeaderText(null);
 			alert.showAndWait();
 			return;

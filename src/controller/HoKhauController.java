@@ -106,13 +106,13 @@ public class HoKhauController implements Initializable {
 		HoKhauModel hoKhauModel = tvHoKhau.getSelectionModel().getSelectedItem();
 
 		if (hoKhauModel == null) {
-			Alert alert = new Alert(AlertType.WARNING, "Hãy chọn hộ khẩu bạn muốn xóa!", ButtonType.OK);
+			Alert alert = new Alert(AlertType.WARNING, "Hãy chọn hộ khẩu muốn xóa!", ButtonType.OK);
 			alert.setHeaderText(null);
 			alert.showAndWait();
 		} else {
-			Alert alert = new Alert(AlertType.WARNING, "Khi xóa hộ khẩu, tất cả thành viên trong hộ đều sẽ bị xóa!",
+			Alert alert = new Alert(AlertType.WARNING, "Khi xóa hộ khẩu, tất cả các thành viên trong hộ sẽ bị xóa!",
 					ButtonType.YES, ButtonType.NO);
-			alert.setHeaderText("Bạn có chắc chắn muốn xóa hộ khẩu này");
+			alert.setHeaderText("Bạn chắc chắn muốn xóa hộ khẩu này?");
 			Optional<ButtonType> result = alert.showAndWait();
 
 			if (result.get() == ButtonType.NO) {
@@ -160,7 +160,7 @@ public class HoKhauController implements Initializable {
 			// neu khong nhap gi -> thong bao loi
 			if (keySearch.length() == 0) {
 				tvHoKhau.setItems(listValueTableView);
-				Alert alert = new Alert(AlertType.WARNING, "Hãy nhập vào thông tin cần tìm kiếm!", ButtonType.OK);
+				Alert alert = new Alert(AlertType.WARNING, "Hãy nhập vào tên chủ hộ!", ButtonType.OK);
 				alert.setHeaderText(null);
 				alert.showAndWait();
 				break;
@@ -192,7 +192,7 @@ public class HoKhauController implements Initializable {
 			// tim thay
 			if (index == 0) {
 				tvHoKhau.setItems(listValueTableView); // hien thi toan bo thong tin
-				Alert alert = new Alert(AlertType.INFORMATION, "Không tìm thấy thông tin!", ButtonType.OK);
+				Alert alert = new Alert(AlertType.INFORMATION, "Không tìm thấy!", ButtonType.OK);
 				alert.setHeaderText(null);
 				alert.showAndWait();
 			}
@@ -202,7 +202,7 @@ public class HoKhauController implements Initializable {
 			// neu khong nhap gi -> thong bao loi
 			if (keySearch.length() == 0) {
 				tvHoKhau.setItems(listValueTableView);
-				Alert alert = new Alert(AlertType.WARNING, "Hãy nhập vào thông tin cần tìm kiếm!", ButtonType.OK);
+				Alert alert = new Alert(AlertType.WARNING, "Hãy nhập vào địa chỉ!", ButtonType.OK);
 				alert.setHeaderText(null);
 				alert.showAndWait();
 				break;
@@ -222,7 +222,7 @@ public class HoKhauController implements Initializable {
 			// neu khong tim thay thong tin tim kiem -> thong bao toi nguoi dung
 			if (index == 0) {
 				tvHoKhau.setItems(listValueTableView); // hien thi toan bo thong tin
-				Alert alert = new Alert(AlertType.INFORMATION, "Không tìm thấy thông tin!", ButtonType.OK);
+				Alert alert = new Alert(AlertType.INFORMATION, "Không tìm thấy!", ButtonType.OK);
 				alert.setHeaderText(null);
 				alert.showAndWait();
 			}
@@ -232,7 +232,7 @@ public class HoKhauController implements Initializable {
 			// neu khong nhap gi -> thong bao loi
 			if (keySearch.length() == 0) {
 				tvHoKhau.setItems(listValueTableView);
-				Alert alert = new Alert(AlertType.INFORMATION, "Bạn cần nhập vào thông tin tìm kiếm!", ButtonType.OK);
+				Alert alert = new Alert(AlertType.INFORMATION, "Hãy nhập vào mã hộ!", ButtonType.OK);
 				alert.setHeaderText(null);
 				alert.showAndWait();
 				break;
@@ -241,7 +241,7 @@ public class HoKhauController implements Initializable {
 			// kiem tra thong tin tim kiem co hop le hay khong
 			Pattern pattern = Pattern.compile("\\d{1,}");
 			if (!pattern.matcher(keySearch).matches()) {
-				Alert alert = new Alert(AlertType.WARNING, "Bạn phải nhập vào 1 số!", ButtonType.OK);
+				Alert alert = new Alert(AlertType.WARNING, "Bạn phải nhập vào một số!", ButtonType.OK);
 				alert.setHeaderText(null);
 				alert.showAndWait();
 				return;
@@ -257,7 +257,7 @@ public class HoKhauController implements Initializable {
 
 			// khong tim thay thong tin -> thong bao toi nguoi dung
 			tvHoKhau.setItems(listValueTableView);
-			Alert alert = new Alert(AlertType.WARNING, "Không tìm thấy thông tin!", ButtonType.OK);
+			Alert alert = new Alert(AlertType.WARNING, "Không tìm thấy!", ButtonType.OK);
 			alert.setHeaderText(null);
 			alert.showAndWait();
 		}
@@ -279,7 +279,7 @@ public class HoKhauController implements Initializable {
 		if (updateHoKhau == null)
 			return;
 		if (hoKhauModel == null) {
-			Alert alert = new Alert(AlertType.WARNING, "Chọn hộ khẩu cần sửa !", ButtonType.OK);
+			Alert alert = new Alert(AlertType.WARNING, "Chọn hộ khẩu cần sửa!", ButtonType.OK);
 			alert.setHeaderText(null);
 			alert.showAndWait();
 			return;
