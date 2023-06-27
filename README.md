@@ -30,3 +30,6 @@ Nhớ đường dẫn cài đặt cho cả hai thứ.
 	 - Ô Find, tìm `fx` và Enter
 	 - Click Install e(fx)clipse bản mới nhất
 	 - Tiếp tục Confirm để tải
+ 5. Cấu hình JavaFx và Mysql-connector-j có trong thư mục lib:
+	 JavaFx: Trong Eclipse > Windows > Preferences > Java > Build Path > User Libraries > New > Nhập "javafx" > Add External Jars > H:\Code\KtpmProject\quan_li_nhan_khau\QuanLyNhanKhau\lib\javafx-sdk-11.0.2\lib
+	 Mysql-connnector-j: Trong Eclipse: Chọn Configure Build Path > Libraries > Add External JARs > H:\Code\KtpmProject\quan_li_nhan_khau\QuanLyNhanKhau\lib\mysql-connector-j-8.0.33/mysql-connector-j-8.0.33.jar
