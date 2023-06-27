@@ -56,11 +56,11 @@ public class HoKhauService {
 		return true;
 	}
 
-	public boolean update(int maho ,String diachi) throws ClassNotFoundException, SQLException {
+	public boolean update(int maho ,String diachi, String sdt) throws ClassNotFoundException, SQLException {
 		Connection connection = MysqlConnection.getMysqlConnection();
 		PreparedStatement preparedStatement;
 
-		String query = "UPDATE ho_khau " + "set DiaChi =" + "'" + diachi + "' where MaHo =" + maho;
+		String query = "UPDATE ho_khau, nhan_khau, chu_ho set ho_khau.DiaChi = " + "'" + diachi + "', nhan_khau.SDT = " + "'" + sdt + "' where ho_khau.MaHo = chu_ho.MaHo and chu_ho.IDChuHo = nhan_khau.ID and ho_khau.MaHo = " + String.valueOf(maho);
 		preparedStatement = connection.prepareStatement(query, Statement.RETURN_GENERATED_KEYS);
 		preparedStatement.executeUpdate();
 		preparedStatement.close();
