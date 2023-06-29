@@ -21,26 +21,26 @@
                         <Font name="System Bold" size="30.0" />
                      </font>
                   </Label>
-                  <Button fx:id="btnLogin" alignment="CENTER" layoutX="216.0" layoutY="299.0" mnemonicParsing="false" onAction="#Login" prefHeight="35.0" prefWidth="120.0" styleClass="button2" stylesheets="@../source/login.css" text="Đăng nhập" textFill="WHITE">
+                  <Button fx:id="btnLogin" alignment="CENTER" layoutX="216.0" layoutY="334.0" mnemonicParsing="false" onAction="#Login" prefHeight="35.0" prefWidth="120.0" styleClass="button2" stylesheets="@../source/login.css" text="Đăng nhập" textFill="WHITE">
                      <font>
                         <Font name="System Bold" size="15.0" />
                      </font>
                   </Button>
-                  <ImageView fitHeight="39.0" fitWidth="48.0" layoutX="101.0" layoutY="142.0" opacity="0.35" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="39.0" fitWidth="48.0" layoutX="101.0" layoutY="176.0" opacity="0.35" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../source/icon-username.png" />
                      </image>
                   </ImageView>
-                  <TextField fx:id="tfUsername" layoutX="150.0" layoutY="142.0" prefHeight="39.0" prefWidth="300.0" promptText="Tài khoản">
+                  <TextField fx:id="tfUsername" layoutX="150.0" layoutY="176.0" prefHeight="39.0" prefWidth="300.0" promptText="Tài khoản">
                      <font>
                         <Font size="20.0" />
                      </font></TextField>
-                  <ImageView fitHeight="39.0" fitWidth="39.0" layoutX="105.0" layoutY="196.0" opacity="0.35" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="39.0" fitWidth="39.0" layoutX="105.0" layoutY="230.0" opacity="0.35" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../source/icon-password.png" />
                      </image>
                   </ImageView>
-                  <PasswordField fx:id="tfPassword" layoutX="150.0" layoutY="194.0" prefHeight="39.0" prefWidth="300.0" promptText="Mật khẩu" style="-fx-border-style: none;">
+                  <PasswordField fx:id="tfPassword" layoutX="150.0" layoutY="228.0" prefHeight="39.0" prefWidth="300.0" promptText="Mật khẩu" style="-fx-border-style: none;">
                      <font>
                         <Font size="20.0" />
                      </font></PasswordField>
