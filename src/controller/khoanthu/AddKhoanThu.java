@@ -20,9 +20,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.Alert.AlertType;
 import javafx.stage.Stage;
 import models.KhoanThuModel;
-import models.NhanKhauModel;
 import services.KhoanThuService;
-import services.NhanKhauService;
 
 public class AddKhoanThu implements Initializable {
 	@FXML
