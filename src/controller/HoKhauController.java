@@ -68,7 +68,11 @@ public class HoKhauController implements Initializable {
 		listValueTableView = FXCollections.observableArrayList(listHoKhau);
 		List<NhanKhauModel> listNhanKhau = new NhanKhauService().getListNhanKhau();
 		List<ChuHoModel> listChuHo = new ChuHoService().getListChuHo();
-
+		
+		if (listChuHo.isEmpty()) {
+			return;
+		}
+		
 		Map<Integer, Integer> mapMahoToId = new HashMap<>();
 		listChuHo.forEach(chuho -> {
 			mapMahoToId.put(chuho.getMaHo(), chuho.getIdChuHo());
@@ -81,11 +85,15 @@ public class HoKhauController implements Initializable {
 
 		// Thiet lap Table views
 		colMaHoKhau.setCellValueFactory(new PropertyValueFactory<HoKhauModel, String>("maHo"));
+		
 		colMaChuHo.setCellValueFactory((CellDataFeatures<HoKhauModel, String> p) -> new ReadOnlyStringWrapper(
 				mapIdToTen.get(mapMahoToId.get(p.getValue().getMaHo())).toString()));
 		colSoThanhVien.setCellValueFactory(new PropertyValueFactory<HoKhauModel, String>("soThanhvien"));
 		colDiaChi.setCellValueFactory(new PropertyValueFactory<HoKhauModel, String>("diaChi"));
 		tvHoKhau.setItems(listValueTableView);
+		
+		
+		
 
 		// Thiet lap Combo box
 		ObservableList<String> listComboBox = FXCollections.observableArrayList("Mã hộ", "Tên chủ hộ", "Địa chỉ");

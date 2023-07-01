@@ -122,8 +122,7 @@ public class AddHoKhau {
 		}
 
 		// kiem tra sdt nhap vao
-		// SDT nhap vao phai khong chua chu cai va nho hon 15 chu so
-		pattern = Pattern.compile("\\d{1,15}");
+		pattern = Pattern.compile("^\\d{10}$");
 		if (!pattern.matcher(tfSoDienThoai.getText()).matches()) {
 			Alert alert = new Alert(AlertType.WARNING, "Hãy nhập vào số điện thoại hợp lệ!", ButtonType.OK);
 			alert.setHeaderText(null);

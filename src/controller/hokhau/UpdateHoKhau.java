@@ -4,6 +4,7 @@ import java.sql.SQLException;
 import java.util.List;
 import java.util.Map;
 import java.util.TreeMap;
+import java.util.regex.Pattern;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -59,19 +60,34 @@ public class UpdateHoKhau {
 	}
 
 	public void updateHoKhau(ActionEvent event) throws ClassNotFoundException, SQLException {
+		
+		Pattern pattern;
+		
 		// kiem tra dia chi nhap vao
 		// dia chi nhap vao la 1 chuoi t 1 toi 30 ki tu
-		if (tfDiaChi.getText().length() >= 50 || tfDiaChi.getText().length() <= 1) {
+		if (tfDiaChi.getText().length() >= 200 || tfDiaChi.getText().length() <= 1) {
 			Alert alert = new Alert(AlertType.WARNING, "Hãy nhập vào địa chỉ hợp lệ!", ButtonType.OK);
 			alert.setHeaderText(null);
 			alert.showAndWait();
 			return;
 		}
 		
+		pattern = Pattern.compile("^\\d{10}$");
+		if (!pattern.matcher(tfSDT.getText()).matches()) {
+			Alert alert = new Alert(AlertType.WARNING, "Hãy nhập vào số điện thoại hợp lệ!", ButtonType.OK);
+			alert.setHeaderText(null);
+			alert.showAndWait();
+			return;
+		}
+		
 		String diaChiString = tfDiaChi.getText();
-		new HoKhauService().update(hoKhauModel.getMaHo(), diaChiString);
+		String sdtString = tfSDT.getText();
+		
+		new HoKhauService().update(hoKhauModel.getMaHo(), diaChiString, sdtString);
 		Stage stage = (Stage)((Node) event.getSource()).getScene().getWindow();
         stage.close();
+        
+        
 	}
 
 }
